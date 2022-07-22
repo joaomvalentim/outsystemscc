@@ -31,17 +31,23 @@ var help = `
 
 `
 
-func main() {
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+	builtBy = "unknown"
+)
 
-	version := flag.Bool("version", false, "")
+func main() {
+	vs := flag.Bool("version", false, "")
 	v := flag.Bool("v", false, "")
 	flag.Bool("help", false, "")
 	flag.Bool("h", false, "")
 	flag.Usage = func() {}
 	flag.Parse()
 
-	if *version || *v {
-		fmt.Println(chshare.BuildVersion)
+	if *vs || *v {
+		fmt.Println(version)
 		os.Exit(0)
 	}
 

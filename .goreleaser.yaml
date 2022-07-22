@@ -6,8 +6,7 @@ builds:
   - env:
       - CGO_ENABLED=0
     goos:
-      - linux
-    binary: outsystemscc 
+      - linux    
 archives:
   - replacements:
       linux: Linux
